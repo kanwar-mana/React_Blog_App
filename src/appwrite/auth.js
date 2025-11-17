@@ -20,7 +20,7 @@ class AuthService {
         name: name,
       });
       if (userAccount) {
-        //call action after successful account creation
+        await this.login({ email, password });
       } else {
         return userAccount;
       }
