@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Logo, LogoutBtn, Container } from "../index.js";
+import { Logo, LogoutBtn, Container, Button } from "../index.js";
 import { useNavigate, Link } from "react-router-dom";
 
 function Header() {
@@ -9,9 +9,9 @@ function Header() {
   const navItems = [
     { name: "Home", path: "/", active: true },
     { name: "Login", path: "/login", active: !isAuthenticated },
-    { name: "Register", path: "/register", active: !isAuthenticated },
-    { name: "All Posts", path: "/posts", active: isAuthenticated },
-    { name: "Create Post", path: "/create-post", active: isAuthenticated },
+    { name: "Register", path: "/signup", active: !isAuthenticated },
+    { name: "All Posts", path: "/all-posts", active: isAuthenticated },
+    { name: "Create Post", path: "/add-post", active: isAuthenticated },
   ];
   return (
     <>
@@ -28,9 +28,9 @@ function Header() {
                 (item) =>
                   item.active && (
                     <li key={item.name}>
-                      <button onClick={() => navigate(item.slug)}>
+                      <Button onClick={() => navigate(item.path)}>
                         {item.name}
-                      </button>
+                      </Button>
                     </li>
                   )
               )}
