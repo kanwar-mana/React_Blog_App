@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RTE, Input, Button, Select } from "..";
+import { RTE, Input, Button, Select } from "./index";
 import service from "../appwrite/config";
 function PostForm({ post }) {
   const { register, handleSubmit, setValue, watch, control, getValues } =
