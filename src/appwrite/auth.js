@@ -43,9 +43,7 @@ class AuthService {
 
   async getCurrentUser() {
     try {
-      const result = await this.account.get();
-      console.log("Current user:", result);
-      return result;
+      return await this.account.get();
     } catch (error) {
       console.log("Appwrite service :: getCurrentUser :: error", error);
       return null;

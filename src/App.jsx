@@ -1,10 +1,11 @@
 import "./App.css";
 import "./index.css";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
 import { useDispatch } from "react-redux";
 import { Header, Footer } from "./components";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +34,9 @@ function App() {
     <div className="flex flex-wrap content-between min-h-screen bg-gray-400">
       <div className="w-full block">
         <Header />
-        <main>{/* <Outlet/> */}</main>
+        <main>
+          <Outlet />
+        </main>
         <Footer />
       </div>
     </div>
